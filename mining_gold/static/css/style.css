@@ -113,6 +113,46 @@ nav a {
     box-shadow: 3px 5px 10px 0px rgba(0,0,0,0.75);
 }
 
+#activity p {
+    margin: .5rem 0;
+    padding: .25rem .25rem;
+}
+
+#activity .win {
+    background-color: green;
+    color: white;
+}
+
+#activity .lose {
+    background-color: red;
+    color: white;
+}
+
+form .reset-btn {
+    margin: 2rem 0 0 auto;
+    display: block;
+    padding: 0.5rem 1.5rem;
+    background-color: red;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+
+
+    -webkit-box-shadow: 1px 2px 4px 1px rgba(0,0,0,0.5);
+    -moz-box-shadow: 1px 2px 4px 1px rgba(0,0,0,0.5);
+    box-shadow: 1px 2px 4px 1px rgba(0,0,0,0.5);
+}
+
+form .reset-btn:hover {
+    background-color: orangered;
+    cursor: pointer;
+
+    -webkit-box-shadow: 1px 2px 4px 1px rgba(0,0,0,0..85);
+    -moz-box-shadow: 1px 2px 4px 1px rgba(0,0,0,0.85);
+    box-shadow: 1px 2px 4px 1px rgba(0,0,0,0.85);
+}
+
 
 /* width */
 ::-webkit-scrollbar {

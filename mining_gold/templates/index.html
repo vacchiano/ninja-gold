@@ -57,28 +57,23 @@
         <h3 class='title'>Activity Feed</h3>
 
         <div id="activity">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil delectus eligendi esse deserunt inventore, blanditiis tenetur porro corrupti commodi soluta!
-            </p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis voluptas harum quod minima maiores veritatis quasi ut aut reprehenderit eius.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas quod eaque doloribus explicabo iure necessitatibus consectetur ea ipsa. Nemo, rem.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil delectus eligendi esse deserunt inventore, blanditiis tenetur porro corrupti commodi soluta!
-            </p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis voluptas harum quod minima maiores veritatis quasi ut aut reprehenderit eius.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil delectus eligendi esse deserunt inventore, blanditiis tenetur porro corrupti commodi soluta!
-            </p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis voluptas harum quod minima maiores veritatis quasi ut aut reprehenderit eius.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil delectus eligendi esse deserunt inventore, blanditiis tenetur porro corrupti commodi soluta!
-            </p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis voluptas harum quod minima maiores veritatis quasi ut aut reprehenderit eius.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas quod eaque doloribus explicabo iure necessitatibus consectetur ea ipsa. Nemo, rem.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil delectus eligendi esse deserunt inventore, blanditiis tenetur porro corrupti commodi soluta!
-            </p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis voluptas harum quod minima maiores veritatis quasi ut aut reprehenderit eius.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil delectus eligendi esse deserunt inventore, blanditiis tenetur porro corrupti commodi soluta!
-            </p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis voluptas harum quod minima maiores veritatis quasi ut aut reprehenderit eius.</p>
-            
+            {% for log_item in request.session.log %}
+            {% if 'lost' in log_item %}
+            <p class="lose">{{ log_item }}</p>
+            {% else %}
+            <p class="win">{{ log_item }}</p>
+            {% endif %}
+            {% endfor %}
+            <!-- <p>------------------------------------------------------------------------</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, deserunt.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, deserunt.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, deserunt.</p> -->
         </div>
+
+        <form action="{% url 'mining_gold:reset' %}" method="POST">
+            {% csrf_token %}
+            <button class="reset-btn">Reset</button>
+        </form>
 
     </div>
     </body>

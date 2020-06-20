@@ -5,4 +5,5 @@ app_name = "mining_gold"
 urlpatterns = [
     path('', views.index, name="home"),
     path('process_money/', views.processMoney, name="process"),
+    path('reset/', views.reset, name="reset"),
 ]
