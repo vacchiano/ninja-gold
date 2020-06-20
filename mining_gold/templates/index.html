@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'mining_gold:home' %}"><h1>Ninja Gold 🥋</h1></a>
+    </nav>
+    <div class="container">
+
+        <h3 class='title'>Your Gold 💰 <span>{{ request.session.gold }}</span></h3>
+        
+        <div id="buildings">
+            <div class="building">
+                <h3>Farm 🌾</h3>
+                <p>(+ 10-20 gold)</p>
+                <form action="{% url 'mining_gold:process' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="type" value="farm">
+                    <button>Find Gold!</button>
+                </form>
+            </div>
+            <div class="building">
+                <h3>Cave 🗻</h3>
+                <p>(+ 5-10 gold)</p>
+                <form action="{% url 'mining_gold:process' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="type" value="cave">
+                    <button>Find Gold!</button>
+                </form>
+            </div>
+            <div class="building">
+                <h3>House 🏠</h3>
+                <p>(+ 2-5 gold)</p>
+                <form action="{% url 'mining_gold:process' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="type" value="home">
+                    <button>Find Gold!</button>
+                </form>
+            </div>
+            <div class="building">
+                <h3>Casino 🎲</h3>
+                <p>(+/- 0-50 gold)</p>
+                <form action="{% url 'mining_gold:process' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="type" value="casino">
+                    <button>Find Gold!</button>
+                </form>
+            </div>
+        </div>
+
+        <h3 class='title'>Activity Feed</h3>
+
+        <div id="activity">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil delectus eligendi esse deserunt inventore, blanditiis tenetur porro corrupti commodi soluta!
+            </p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis voluptas harum quod minima maiores veritatis quasi ut aut reprehenderit eius.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas quod eaque doloribus explicabo iure necessitatibus consectetur ea ipsa. Nemo, rem.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil delectus eligendi esse deserunt inventore, blanditiis tenetur porro corrupti commodi soluta!
+            </p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis voluptas harum quod minima maiores veritatis quasi ut aut reprehenderit eius.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil delectus eligendi esse deserunt inventore, blanditiis tenetur porro corrupti commodi soluta!
+            </p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis voluptas harum quod minima maiores veritatis quasi ut aut reprehenderit eius.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil delectus eligendi esse deserunt inventore, blanditiis tenetur porro corrupti commodi soluta!
+            </p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis voluptas harum quod minima maiores veritatis quasi ut aut reprehenderit eius.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas quod eaque doloribus explicabo iure necessitatibus consectetur ea ipsa. Nemo, rem.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil delectus eligendi esse deserunt inventore, blanditiis tenetur porro corrupti commodi soluta!
+            </p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis voluptas harum quod minima maiores veritatis quasi ut aut reprehenderit eius.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil delectus eligendi esse deserunt inventore, blanditiis tenetur porro corrupti commodi soluta!
+            </p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis voluptas harum quod minima maiores veritatis quasi ut aut reprehenderit eius.</p>
+            
+        </div>
+
+    </div>
+    </body>
+</html>
